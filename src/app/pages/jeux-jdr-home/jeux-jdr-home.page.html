@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Listes des joueurs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ng-container *ngIf="!joueurs || joueurs.length == 0">
+      <div *ngFor="let n of [0,1,2]" padding>
+        <ion-skeleton-text></ion-skeleton-text>
+        <p>
+          <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+        </p>
+      </div>
+    </ng-container>
+
+    <ion-item-sliding *ngFor="let item of joueurs">
+      <ion-item lines="inset" button [routerLink]="['/jeux-jdr, item.id']">
+        <ion-label>
+          <h3>Pseudo : {{ item.pseudo }}</h3>
+          <br>
+          <p>HP : {{ item.hp }}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="start">
+        <ion-item-option (click)="damaged(item)" color="secondary">
+          -1
+        </ion-item-option>
+        <ion-item-option (click)="healed(item)" color="primary">
+          +1
+        </ion-item-option>
+        <ion-item-option (click)="update(item)" color="success">
+          <ion-icon name="checkmark"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item-options side="end">
+        <ion-item-option (click)="remove(item)" color="danger">
+          Supprimer
+          <ion-icon name="checkmark" slot="end"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button routerLink="/jeux-home" routerDirection="forward">
+      <ion-icon name="home"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/jeux-jdr" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>

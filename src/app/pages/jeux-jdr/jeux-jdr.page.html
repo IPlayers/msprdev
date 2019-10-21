@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/jeux-home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Jeu de Rôle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required="true" type="text" placeholder="Pseudo" [(ngModel)]="joueur.pseudo"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="saveJoueur()">Enregistrer</ion-button>
+</ion-content>

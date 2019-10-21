@@ -4,8 +4,10 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface Todo {
-  task: string;
-  priority: number;
+  nom: string;
+  prenom: string;
+  ventes: number;
+  formations: string;
   createdAt: number;
 }
 

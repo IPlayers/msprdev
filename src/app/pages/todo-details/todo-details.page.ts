@@ -11,10 +11,12 @@ import {LoadingController, NavController} from '@ionic/angular';
 export class TodoDetailsPage implements OnInit {
 
   todo: Todo = {
-    task: 'Test 123',
-    createdAt : new Date().getTime(),
-    priority : 2
-  }
+    nom: null,
+    prenom: null,
+    ventes: null,
+    formations: null,
+    createdAt : new Date().getTime()
+  };
 
   todoId = null;
 
@@ -53,12 +55,12 @@ export class TodoDetailsPage implements OnInit {
     if (this.todoId) {
       this.todoService.updateTodo(this.todo, this.todoId).then(() => {
         loading.dismiss();
-        this.nav.navigateBack('home');
+        this.nav.navigateBack('todo-home');
       });
     } else {
       this.todoService.addTodo(this.todo).then(() => {
         loading.dismiss();
-        this.nav.navigateBack('home');
+        this.nav.navigateBack('todo-home');
       });
     }
   }

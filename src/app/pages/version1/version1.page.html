@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title color = "primary" >
+      Version 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class ="btnPage" align="center">
+  <ion-card class="welcome-card">
+    <ion-img src="http://www.ecoburo.fr/sites/default/files/imagecache/product_original/product_pictures/me1244.png"></ion-img>
+  </ion-card>
+
+  <ion-list lines="none">
+
+    <form (ngSubmit)="logForm1()">
+
+      <ion-text color="tertiary">
+        <h3>Calcul du Taux de Remise</h3>
+      </ion-text>
+      <ion-item>
+        <ion-label position="floating">Merci d'indiquer le prix d'achat brut :</ion-label>
+        <ion-input type="number" [(ngModel)]="pachatBrutTR" name="pachatBrutTR"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"> Merci d'indiquer le prix d'achat net :  </ion-label>
+        <ion-input type="number" [(ngModel)]="pachatNetTR" name="pachatNetTR"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-text color="primary"> Le taux de remise est de : {{tremise}} </ion-text>
+      </ion-item>
+      <ion-button color="tertiary" type="submit" block>calcul</ion-button>
+
+    </form>
+
+    <form (ngSubmit)="logForm2()">
+
+      <ion-text color="tertiary">
+        <h3>Calcul du Prix Achat Net</h3>
+      </ion-text>
+      <ion-item>
+        <ion-label position="floating">Merci d'indiquer le prix d'achat brut :  </ion-label>
+        <ion-input type="number" [(ngModel)]="pachatBrutACN" name="pachatBrutACN"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Merci d'indiquer le taux de remise :  </ion-label>
+        <ion-input type="number" [(ngModel)]="tauxRemisePAN" name="tauxRemisePAN"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-text color="primary"> Le prix d'achat net  est  : {{achatnetNET}} </ion-text>
+      </ion-item>
+      <ion-button color="tertiary" type="submit" block>calcul</ion-button>
+
+    </form>
+
+    <form (ngSubmit)="logForm3()">
+
+      <ion-text color="tertiary">
+        <h3>Calcul Prix de vente net</h3>
+      </ion-text>
+      <ion-item>
+        <ion-label position="floating">Merci d'indiquer le prix d'achat net :  </ion-label>
+        <ion-input type="number" [(ngModel)]="prixAchatnetPV" name="prixAchatnetPV"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Merci d'indiquer la coefficient multiplicateur  :  </ion-label>
+        <ion-input type="number" [(ngModel)]="coeffMultiPV" name="coeffMultiPV"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-text color="primary"> Prix de vente net est  : {{prixVenteNet}} </ion-text>
+      </ion-item>
+
+      <ion-button color="tertiary" type="submit" block>calcul</ion-button>
+
+    </form>
+
+    <form (ngSubmit)="logForm4()">
+
+      <ion-text color="tertiary">
+        <h3>Calcul Coefficient multiplicateur</h3>
+      </ion-text>
+      <ion-item>
+        <ion-label position="floating">Merci d'indiquer le prix de vente net :  </ion-label>
+        <ion-input type="number" [(ngModel)]="prixNetnetCo" name="prixNetnetCo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Merci d'indiquer le prix d'achat net :  </ion-label>
+        <ion-input type="number" [(ngModel)]="prixAchatnetCo" name="prixAchatnetCo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-text color="primary"> Coefficient multiplicateur est  : {{coeffMulti}} </ion-text>
+      </ion-item>
+
+      <ion-button color="tertiary" type="submit" block>calcul</ion-button>
+
+    </form>
+  </ion-list>
+
+  <br>
+  <ion-button routerLink="/home" routerDirection="forward">
+    <ion-icon name="home"></ion-icon>
+  </ion-button>
+
+</ion-content>

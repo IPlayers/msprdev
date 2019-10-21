@@ -1,20 +1,20 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
+      <ion-back-button defaultHref="/todo-home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Details</ion-title>
+    <ion-title>Formulaire</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list lines="full">
     <ion-item>
-      <ion-input required type="text" placeholder="Task" [(ngModel)]="todo.task"></ion-input>
+      <ion-input required="true" type="text" placeholder="Nom" [(ngModel)]="todo.nom"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input required type="text" placeholder="Priority" [(ngModel)]="todo.priority"></ion-input>
+      <ion-input required type="text" placeholder="Prenom" [(ngModel)]="todo.prenom"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button expand="full" (click)="saveTodo()">Save</ion-button>
+  <ion-button expand="full" (click)="saveTodo()">Enregistrer</ion-button>
 </ion-content>

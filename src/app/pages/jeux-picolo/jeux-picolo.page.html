@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/jeux-home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Picolo like</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div align="center" style="margin: 33% 5% 0">
+    <h2 style="color: #113049"> {{phrases[id]}} </h2>
+  </div>
+  <br>
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button expand="full" (click)="refresh()">
+      <ion-icon name="refresh-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

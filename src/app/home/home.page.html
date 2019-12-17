@@ -4,9 +4,15 @@
       Maji Maji
     </ion-title>
   </ion-toolbar>
+  <ion-item >
+    <ion-label>DarkMode</ion-label>
+    <ion-toggle value="DarkMode" (ionChange)="DarkModeToggle()"></ion-toggle>
+  </ion-item>
 </ion-header>
 
 <ion-content>
+
+
   <ion-list align="center">
     <br><br><br>
     <ion-button padding href="/todo-home">Gestion des invités</ion-button>
@@ -15,8 +21,4 @@
     <br><br><br>
     <ion-button padding href="/jeux-home">Jeux en soirée</ion-button>
   </ion-list>
-
-
-
-
 </ion-content>

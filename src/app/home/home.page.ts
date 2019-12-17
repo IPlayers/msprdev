@@ -9,8 +9,11 @@ import {Todo, TodoService} from '../services/todo.service';
 export class HomePage implements OnInit {
 
   todos: Todo[];
+  IsDark: boolean;
 
-  constructor(private todoService: TodoService) {}
+  constructor(private todoService: TodoService) {
+    this.IsDark = false;
+  }
 
   ngOnInit() {
     this.todoService.getTodos().subscribe(res => {
@@ -20,6 +23,15 @@ export class HomePage implements OnInit {
 
   remove(item) {
     this.todoService.removeTodo(item.id);
+  }
+
+  DarkModeToggle() {
+    this.IsDark = !this.IsDark;
+    if (this.IsDark) {
+      document.documentElement.style.setProperty(`--background-color`, '#000000');
+    } else {
+      document.documentElement.style.setProperty(`--background-color`, '#FFFFFF');
+    }
   }
 
 }

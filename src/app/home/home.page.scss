@@ -1,3 +1,11 @@
 .fake-skeleton {
   width: 60%;
 }
+
+ion-content{
+  --background : var(--background-color);
+}
+
+.list-md {
+  background :  var(--background-color);
+}
